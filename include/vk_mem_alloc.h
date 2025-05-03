@@ -260,7 +260,11 @@ extern "C" {
 // #define VMA_CALL_PRE  __declspec(dllexport)
 // #define VMA_CALL_POST __cdecl
 #ifndef VMA_CALL_PRE
-    #define VMA_CALL_PRE
+    #ifdef _MSC_VER
+        #define VMA_CALL_PRE extern __declspec(dllexport)
+    #else
+        #define VMA_CALL_PRE extern
+    #endif
 #endif
 #ifndef VMA_CALL_POST
     #define VMA_CALL_POST

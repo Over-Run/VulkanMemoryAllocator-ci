@@ -20,7 +20,7 @@
 # THE SOFTWARE.
 #
 
-option(VMA_STATIC_VULKAN_FUNCTIONS "Link statically with Vulkan API" ON)
+option(VMA_STATIC_VULKAN_FUNCTIONS "Link statically with Vulkan API" OFF)
 option(VMA_DYNAMIC_VULKAN_FUNCTIONS "Fetch pointers to Vulkan functions internally (no static linking)" OFF)
 set(VMA_VOLK_HEADER_PATH "" CACHE STRING "Path to volk.h file from the volk library (optional)")
 option(VMA_DEBUG_ALWAYS_DEDICATED_MEMORY "Every allocation will have its own memory block" OFF)
