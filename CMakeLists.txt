@@ -24,9 +24,11 @@ cmake_minimum_required(VERSION 3.15...3.26)
 
 project(VMA VERSION 3.2.1 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_compile_definitions(_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR=1)
 
 add_library(VulkanMemoryAllocator SHARED src/impl.cpp)
 add_library(GPUOpen::VulkanMemoryAllocator ALIAS VulkanMemoryAllocator)
